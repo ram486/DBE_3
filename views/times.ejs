@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Futebol Online</title>
+    </head>
+    <body>
+        <h1>Futebol Online</h1>
+        <h2>Lista de Times</h2>
+        <% if (typeof times !== 'undefined' && !times.length) { %>
+        <p>Não há times cadastrados.</p>
+        <% } else { %>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Estádio</th>
+                <th>Cidade</th>
+                <th>Ação</th>
+            </tr>
+            <% times.forEach(time => { %>
+            <tr>
+                <td><%= time.id %></td>
+                <td><%= time.nome %></td>
+                <td><%= time.estadio %></td>
+                <td><%= time.cidade %></td>
+                <td><a  href="/times/<%= time.id %>"">Detalhes</a></td>
+            </tr>
+            <% }) %>
+        </table>
+        <% } %>
+        <a  href="/">Início</a>
+    </body>
+</html>

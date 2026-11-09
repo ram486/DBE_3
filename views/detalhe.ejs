@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Futebol Online</title>
+    </head>
+    <body>
+        <h1>Futebol Online</h1>
+        <% if (typeof time !== 'undefined') { %>
+        <h2><%= time.nome %></h2>
+        <p>ID: <%= time.id %></p>
+        <p>Cidade: <%= time.cidade %></p>
+        <p>Estádio: <%= time.estadio %></p>
+        <% } else { %>
+        <h2>Não há nenhum time com esse ID.</h2>
+        <% } %>
+        <a  href="/times">Voltar</a>
+    </body>
+</html>
